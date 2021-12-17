@@ -1,0 +1,74 @@
+## Setup
+
+Start from a clean, empty repository
+
+Init NMP and take all the defaults
+  ```
+npm init
+```
+
+  ```
+npm install ammojs - typed
+tsc --init
+```
+
+Initialize webpack and take the defaults
+  ```
+webpack-cli init
+```
+
+## Source Files
+
+  ```
+cat << EOF > index.ts
+import AmmoModule from "ammojs-typed";
+
+AmmoModule().then((lib) => {
+  new lib.btDefaultCollisionConfiguration();
+});
+EOF
+```
+
+  ```
+cat << EOF > index.html
+<head>
+  <title>Ammo in Typescript</title>
+</head>
+<body>
+Nothing to see here.
+</body>
+EOF
+```
+
+  ```
+cat << EOF > webpack.config.js
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  entry: {
+    index: "./index.js",
+  },
+  output: {
+    path: __dirname + "/dist",
+    filename: "[name].js",
+  },
+  optimization: {
+    minimize: false,
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      name: "index",
+      template: "./index.html",
+      filename: "index.html",
+      chunks: ['index']
+    }),
+  ],
+}
+
+EOF
+```
+
+## Building
+
+tsc
+webpack

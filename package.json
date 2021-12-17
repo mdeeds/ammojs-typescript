@@ -1,0 +1,27 @@
+{
+  "name": "ammojs-typescript",
+  "version": "1.0.0",
+  "description": "Start from a clean, empty repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdeeds/ammojs-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdeeds/ammojs-typescript/issues"
+  },
+  "homepage": "https://github.com/mdeeds/ammojs-typescript#readme",
+  "dependencies": {
+    "-": "^0.0.1",
+    "ammojs": "^0.0.2",
+    "typed": "^1.3.0"
+  },
+  "devDependencies": {
+    "@webpack-cli/generators": "^2.4.1"
+  }
+}
